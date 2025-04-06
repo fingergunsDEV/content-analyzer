@@ -1,0 +1,97 @@
+<html>
+<head>
+  <title>Content Analyzer Heatmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Content Analyzer</h1>
+      <p>Analyze and visualize your content optimization</p>
+    </div>
+    
+    <div class="input-area">
+      <textarea id="content-input" placeholder="Paste your content here for analysis..."></textarea>
+      <button id="analyze-btn">Analyze Content</button>
+    </div>
+    
+    <div class="results-container">
+      <div class="score-summary">
+        <div class="overall-score">
+          <span id="score-value">0</span>
+          <span class="score-label">Overall Score</span>
+        </div>
+        <div class="score-metrics">
+          <div class="metric">
+            <span class="metric-value" id="keyword-score">0</span>
+            <span class="metric-label">Keyword Density</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" id="sentence-score">0</span>
+            <span class="metric-label">Sentence Structure</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" id="readability-score">0</span>
+            <span class="metric-label">Readability</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" id="uniqueness-score">0</span>
+            <span class="metric-label">Uniqueness</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" id="sentiment-score">0</span>
+            <span class="metric-label">Sentiment</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value" id="relevance-score">0</span>
+            <span class="metric-label">Relevance</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="legend">
+        <div class="legend-item"><span class="color-sample poor"></span> Poor (0-30)</div>
+        <div class="legend-item"><span class="color-sample average"></span> Average (31-60)</div>
+        <div class="legend-item"><span class="color-sample good"></span> Good (61-80)</div>
+        <div class="legend-item"><span class="color-sample excellent"></span> Excellent (81-100)</div>
+      </div>
+      
+      <div class="content-analysis">
+        <div id="analyzed-content" class="analyzed-content"></div>
+        <div class="advanced-analysis">
+          <div class="analysis-section">
+            <h3>Keyword Density (Bigrams)</h3>
+            <div id="bigrams-list" class="bigrams-list"></div>
+          </div>
+          <div class="analysis-section">
+            <h3>Semantic Distance Map</h3>
+            <div id="semantic-map" class="semantic-map"></div>
+          </div>
+        </div>
+        <div class="suggestions-box">
+          <h3>Semantic Network Suggestions</h3>
+          <p class="suggestion-desc">Add these related terms to complete your semantic network:</p>
+          <div id="suggestions-list" class="suggestions-list"></div>
+        </div>
+      </div>
+      
+      <div class="rewritten-content-container">
+        <h3>Rewritten Content</h3>
+        <p class="rewritten-desc">Improved version with semantic network suggestions:</p>
+        <div id="rewritten-content" class="rewritten-content"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "config": "./config.js",
+        "rewriter": "./content-rewriter.js"
+      }
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
